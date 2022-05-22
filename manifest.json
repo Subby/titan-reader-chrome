@@ -1,0 +1,17 @@
+{
+  "name": "Titan Reader",
+  "description": "An extension to help you read read easily.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "contextMenus"
+  ],
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
