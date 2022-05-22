@@ -1,5 +1,8 @@
-const onClick = (data) => {
-    console.log(data);
+const onClick = async (data, tab) => {
+  chrome.scripting.executeScript({
+    target: {tabId: tab.id},
+    files: ['getDOM.js'],
+  });
 };
 
 chrome.contextMenus.onClicked.addListener(onClick);

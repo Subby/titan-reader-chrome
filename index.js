@@ -1,5 +1,5 @@
 const minSplitLength = 2;
-const processText = (text) => {
+export const processText = (text) => {
   let processedText = '';
   const splitText = text.split(' ');
   for(const word of splitText) {
@@ -15,7 +15,3 @@ const processText = (text) => {
   }
   return processedText;
 };
-
-const textAreaElement = document.getElementById('textArea');
-
-textAreaElement.innerHTML = processText('A mighty demon is being summoned to destroy the city of Varrock. You find out you are the one destined to stop him (or at least try).');
