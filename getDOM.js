@@ -1,3 +1,21 @@
-console.log(document.getSelection());
+const processText = (text) => {
+    let processedText = '';
+    const splitText = text.split(' ');
+    for(const word of splitText) {
+         if(word.length >  2) {
+          const wordHalved = word.length / 2;
+          const wordBolded = '<span class="bolded">' + word.substring(0, wordHalved) + '</span>';
+          const wordNonBolded = '<span class="non-bolded">' + word.substring(wordHalved) + '</span>';
+          processedText = processedText  + wordBolded + wordNonBolded + ' ';
+      } else {
+          const wordBolded = '<span class="bolded">' + word + '</span>' + ' ';
+          processedText = processedText + wordBolded;
+      }
+    }
+    console.log(processedText);
+    return processedText;
+};
 
-document.getSelection().baseNode.parentElement.innerHTML = 'replaced!';
+console.log(document.getSelection());
+let processedText = processText(document.getSelection().anchorNode.parentElement.innerText);
+document.getSelection().anchorNode.parentElement.innerHTML = processedText;
